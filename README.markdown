@@ -6,9 +6,13 @@ A wrapper around [strongbox](http://github.com/spikex/strongbox) to store and en
 Setup
 ----
 
-Install strongbox
+Install strongbox and safe
 
     config.gem "spikex-strongbox", :lib => "strongbox", :source => "http://gems.github.com"
+    config.gem "bitzesty-safe", :lib => "safe", :source => "http://gems.github.com"
+    
+    rake gems:install
+    rake gems:unpack
 
 Generate a migration with `script/generate migration CreateSafeCabinet` and add the following
 
