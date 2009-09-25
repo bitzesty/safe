@@ -1,0 +1,8 @@
+<% unless @data %>
+  <% form_tag unlock_safe_cabinet_path(@cabinet) do |f| %>
+    <%= password_field_tag :passphrase %>
+    <%= submit_tag "unlock" %>
+  <% end %>
+<% else %>
+  <%= @data %>
+<% end %>
