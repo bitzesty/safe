@@ -1,5 +1,6 @@
 Safe
 ====
+
 A wrapper around [strongbox](http://github.com/spikex/strongbox) to store and encrypt data.
 
 Setup
@@ -16,7 +17,7 @@ Generate a migration with `script/generate migration CreateSafeCabinet` and add 
         create_table :safe_cabinets, :force => true do |t|
           t.binary :data
           t.binary :data_key
-          t.binary :data_id
+          t.binary :data_iv
           t.integer :encryptable_id
           t.string :encryptable_type
           t.timestamps

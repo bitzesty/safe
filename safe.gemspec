@@ -14,11 +14,11 @@ Gem::Specification.new do |s|
   s.email = %q{info@bitzesty.com}
   s.extra_rdoc_files = [
     "LICENSE",
-     "README"
+     "README.markdown"
   ]
   s.files = [
     "LICENSE",
-     "README",
+     "README.markdown",
      "Rakefile",
      "VERSION",
      "app/controllers/safe_cabinets_controller.rb",
