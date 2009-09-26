@@ -42,7 +42,7 @@ module Safe
       object_id = self.id
       pass = self.password 
       raise Safe::KeygenError if object_id.nil? || pass.nil?
-      dir_class = root_dir + "/#{self.class.tableize}/"
+      dir_class = root_dir + "/#{self.class.to_s.tableize}/"
       dir = dir_class + "#{object_id}/"
       if File.exists?(root_dir) && File.directory?(root_dir)
         Dir.mkdir(dir_class) unless File.exists?(dir_class)
