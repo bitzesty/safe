@@ -44,7 +44,7 @@ class SafeCabinet < ActiveRecord::Base
   end
   
   def lock_for name
-    lock_options[name] = options.merge(:key_pair => File.join(SAFE_KEYS_DIR, self.encryptable_class.to_s.tableize, self.encryptable_id.to_s, "keypair.pem"))
+    lock_options[name] = options.merge(:key_pair => File.join(SAFE_KEYS_DIR, self.encryptable_type.to_s.tableize, self.encryptable_id.to_s, "keypair.pem"))
     @_locks ||= {}
     @_locks[name] ||= Lock.new(name, self, self.class.lock_options[name])
   end
