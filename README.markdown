@@ -43,6 +43,11 @@ In your model that you want to store the encrypted data add:
       after_create :make_keys!
     end
 
+Make sure you are not logging the data/password by adding the following in your ApplicationController
+
+    filter_parameter_logging :data
+    filter_parameter_logging :password
+
 _N.B. A password must be used when creating an instance of MyModel._
 
 To create and use safe_cabinets:
