@@ -13,6 +13,7 @@ class SafeCabinetsController < ApplicationController
   def unlock
     @cabinet = SafeCabinet.find(params[:id])
     @data = @cabinet.read_data(params[:password])
+    flash[:error] = "Wrong Password" unless @data
     render :show
   end
 
